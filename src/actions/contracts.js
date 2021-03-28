@@ -36,7 +36,7 @@ export const startAddInvoice = (contractId ,invoiceData = {}) => {
 
         return axios({
             method: 'post',
-            url: `/addInvoice/${contractId}`,
+            url: `/contract-api/addInvoice/${contractId}`,
             headers: {
                 "Authorization": `Bearer ${token}`, 
                 'Content-Type': 'application/json'

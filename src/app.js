@@ -16,13 +16,13 @@ const store = configureStore();
 
 store.subscribe(()=>{
     const state = store.getState()
-    console.log(state)
+    // console.log(state)
 
 })
 
 const checkAuth = setInterval(()=> {
     if(!!store.getState().user.token) {
-        store.dispatch(startSetContracts(2020))
+        store.dispatch(startSetContracts(moment().format('YYYY')))
     if(store.getState().user.user.name === "admin") {
         store.dispatch(startUsersSet())
     }
@@ -33,14 +33,6 @@ const checkAuth = setInterval(()=> {
 const clearCheckAuth = () => {
     clearInterval(checkAuth)
 }
-
-
-console.log(moment().format('YYYY'))
-
-
-
-
-
 
 const jsx = (
     <Provider store={store}> 

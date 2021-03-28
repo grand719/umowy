@@ -10,6 +10,7 @@ class ContractListFilter extends React.Component {
         super(props)
 
         this.state = {
+            error: '',
             year: '',
         }
     }
@@ -29,6 +30,7 @@ class ContractListFilter extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
 
+        this.props.addText({text: ''})
         this.props.startSetContracts(this.state.year)
         this.setState(()=>({year: ''}))
     }
@@ -38,7 +40,7 @@ class ContractListFilter extends React.Component {
             <div>
              <input type="text" value={this.props.text} onChange={this.onFilterChange}/>
              <form onSubmit={this.onSubmit}>
-             <input type="text" placeholder="Rok" value={this.props.text} onChange={this.onYearChange}/>
+             <input type="text" placeholder="Rok" value={this.props.year} onChange={this.onYearChange}/>
              <button>Wyszukaj</button>
              </form>
             </div>

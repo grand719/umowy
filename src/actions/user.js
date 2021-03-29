@@ -1,4 +1,8 @@
 import axios from 'axios';
+import moment from 'moment';
+
+import {startUsersSet, clearUsers} from './users'
+import {startSetContracts, clearContract} from './contracts'
 
 export const addUser = (user) => ({
     type: 'ADD_USER',
@@ -18,6 +22,10 @@ export const startUserLogin = (user ) => {
             data
         }).then((res)=> {
             dispatch(addUser(res.data))
+            dispatch(startSetContracts(moment().format('YYYY')))
+            if(res.data.user.name === 'admin') {
+                dispatch(startUsersSet())
+            }
         }).catch((error)=> {
             console.log(error)
         })
@@ -40,7 +48,11 @@ export const startUserLogout = () => {
                 "Authorization": `Bearer ${token}`, 
                 'Content-Type': 'application/json'
             }
-        }).then(() => {dispatch(userLogout())})
+        }).then(() => {
+            dispatch(userLogout())
+            dispatch(clearUsers())
+            dispatch(clearContract())
+        })
         .catch((error)=> {
             console.log(error)
         })

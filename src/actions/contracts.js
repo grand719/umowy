@@ -88,6 +88,10 @@ export const editContract = (contractId, updates) => ({
     updates
 })
 
+export const clearContract = () => ({
+    type: 'CLEAR_CONTRACT'
+})
+
 export const startEditContract = (contractID, updates) => {
     return (dispatch, getState) => {
         const token = getState().user.token

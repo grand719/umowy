@@ -15,7 +15,6 @@ const Header =(props) => (
             {props.user.name === 'admin' && <NavLink to='/adminpage' activeClassName='is-active'>Użytkownicy</NavLink>}
             <button onClick={()=>{
                 props.startUserLogout()
-                props.clearUsers()
             }}>Wyloguj</button>
         </header>
 )

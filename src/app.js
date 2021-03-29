@@ -20,19 +20,19 @@ store.subscribe(()=>{
 
 })
 
-const checkAuth = setInterval(()=> {
-    if(!!store.getState().user.token) {
-        store.dispatch(startSetContracts(moment().format('YYYY')))
-    if(store.getState().user.user.name === "admin") {
-        store.dispatch(startUsersSet())
-    }
-        clearCheckAuth();
-    }
-}, 1)
+// const checkAuth = setInterval(()=> {
+//     if(!!store.getState().user.token) {
+//         store.dispatch(startSetContracts(moment().format('YYYY')))
+//     if(store.getState().user.user.name === "admin") {
+//         store.dispatch(startUsersSet())
+//     }
+//         clearCheckAuth();
+//     }
+// }, 1)
 
-const clearCheckAuth = () => {
-    clearInterval(checkAuth)
-}
+// const clearCheckAuth = () => {
+//     clearInterval(checkAuth)
+// }
 
 const jsx = (
     <Provider store={store}> 

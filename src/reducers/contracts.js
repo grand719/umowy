@@ -44,6 +44,8 @@ export default (state = contractReducerDefaultState, action) => {
             })
         case 'SET_CONTRACTS':
             return action.contracts
+        case 'CLEAR_CONTRACT' :
+            return []
         default:
             return state
     }

@@ -13,6 +13,17 @@ class ContractListFilter extends React.Component {
             error: '',
             year: '',
         }
+
+
+
+    }
+
+    noenter = (e) => {
+        e = e || window.event;
+
+        let key = e.keyCode || e.charCode;
+
+        return key !== 13;
     }
 
     onYearChange = (e) => {
@@ -22,6 +33,7 @@ class ContractListFilter extends React.Component {
     }
 
     onFilterChange = (e) => {
+        e.preventDefault();
         const text = e.target.value
 
         this.props.addText({text: text})
@@ -37,8 +49,10 @@ class ContractListFilter extends React.Component {
 
     render() {
         return (
-            <div>
-             <input type="text" value={this.props.text} onChange={this.onFilterChange}/>
+            <div className="contract-filters">
+            <div className="filtruj">
+             <input type="text" placeholder="Filtruj"  value={this.props.text} onChange={this.onFilterChange} />
+             </div>
              <form onSubmit={this.onSubmit}>
              <input type="text" placeholder="Rok" value={this.props.year} onChange={this.onYearChange}/>
              <button>Wyszukaj</button>

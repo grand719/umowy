@@ -20,8 +20,14 @@ const ContractPage = (props) => {
         props.history.push('/')
     }
     return (
-        <div>
-            <h1>{props.contract.title} --- Wartość umowy: {numeral(props.contract.budget/100).format('0,0.00')}zł --- Pozostała kwota: {numeral((props.contract.budget - totalInvoiceValue(props.contract.invoices))/100).format('0,0.00')}zł</h1>
+        <div className="contract-page">
+            <div className="contract-page--title">
+                <h1>Tytuł: {props.contract.title}</h1>
+                <h1>Wartość umowy: {numeral(props.contract.budget/100).format('0,0.00')}zł</h1>
+                <h1>Pozostała kwota: {numeral((props.contract.budget - totalInvoiceValue(props.contract.invoices))/100).format('0,0.00')}zł</h1>
+            </div>
+            <div className="contract-page--wrapper">
+            <div className="contract-page--menu">
             <Link to={`/createinvoice/${props.contract._id}`}>
                 <button>
                     Dodaj Fakture
@@ -32,12 +38,16 @@ const ContractPage = (props) => {
                     Edytuj
                 </button>
             </Link>
-            <button onClick={onClickDelete}>
+            <button onClick={onClickDelete} className="delte-button">
                 Usuń
             </button>
+            </div>
+            <div className="contract-page--invoice__list">
             {props.contract.invoices.map((invoice)=> {
                 return <InvoiceListItem key={invoice._id}  invoice = {invoice} contractID = {props.contract._id}/>
             })}
+            </div>
+            </div>
         </div>
     )
 }

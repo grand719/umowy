@@ -61,7 +61,7 @@ export default class ContractForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="contract-form">
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <input 

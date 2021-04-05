@@ -14,12 +14,20 @@ const totalInvoiceValue = (invoices) => {
 }
 
 return (
-    <div>
-        <Link to={`/contract/${_id}`}>
-        <h3>{title} | Numer umowy: {contract_number} | Wartość umowy {numeral(budget/100).format('0,0.00')}zł</h3>
-        </Link>
-        <h4> Pozostała kwota: {numeral((budget - totalInvoiceValue(invoices))/100).format('0,0.00')} zł</h4>
+    <div className="contracts-list-item">
+        <Link to={`/contract/${_id}`} className="contract-item__link">
+        <div>
+        <div className="contract-item__title">
+        <h3>Tytuł: {title} </h3>
+        <h3>Numer umowy: {contract_number} </h3>
         <h4> Rok {year}</h4>
+        </div>
+        <div className="contract-item__values">
+        <h4> Wartość umowy {numeral(budget/100).format('0,0.00')}zł</h4>
+        <h4> Pozostała kwota: {numeral((budget - totalInvoiceValue(invoices))/100).format('0,0.00')} zł</h4>
+        </div>
+        </div>
+        </Link>
     </div>
 )
 }

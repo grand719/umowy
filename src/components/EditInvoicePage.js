@@ -7,7 +7,8 @@ import {startEditInvoice} from '../actions/contracts'
 const EditInvoicePage = (props) => {
 
 return(
-    <div>
+    <div className="edit-invoice-page">
+        <h1>Edytuj</h1>
         <InvoiceForm
             invoice={props.contract.invoices.find((invoice)=> invoice._id === props.match.params.invoiceid)}
             buttonText={"Edytuj"}

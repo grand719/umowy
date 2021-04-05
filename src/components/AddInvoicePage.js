@@ -12,7 +12,7 @@ export class AddInvoicePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="add-invoice-page">
                 <h1>Dodaj Fakture</h1>
                 <InvoiceForm
                    onSubmit={this.onSubmit} 

@@ -8,7 +8,7 @@ import {startEditContract} from '../actions/contracts'
 const EditContractPage = (props) => {
 
 return(
-    <div>
+    <div className="edit-contract-page">
         <ContractForm 
             contract={props.contract}
             onSubmit = {

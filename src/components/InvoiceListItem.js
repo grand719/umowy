@@ -5,10 +5,11 @@ import {startDeleteInvoice} from '../actions/contracts'
 import numeral from 'numeral'
 
 const InvoiceListItem = (props) => (
-    <div>
-        <h3>{props.invoice.title}</h3>
+    <div className="contract-page--invoice-list-item">
+        <h3>Tytuł/numer: {props.invoice.title}</h3>
         <p>Kwota faktury: {numeral(props.invoice.value/100).format('0,0.00')}zł</p>
         <p>Utworzone przez: {props.invoice.createdBy}, Zmodyfikowane przez: {props.invoice.modifiedBy}</p>
+        <div className="contract-page--invoice_button-wrapper">
         <Link to={`/editinvoice/${props.contractID}/${props.invoice._id}`}>
             <button>
                 Edytuj
@@ -17,6 +18,7 @@ const InvoiceListItem = (props) => (
             <button onClick={()=>{props.startDeleteInvoice(props.contractID,props.invoice._id)}}>
                 Usuń
             </button>
+        </div>
     </div>
 )
 

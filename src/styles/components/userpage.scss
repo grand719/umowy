@@ -1,0 +1,42 @@
+.user-page {
+    display: flex;
+    background-color: $darkblue;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.user-page form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.user-page input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid $gray;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 0px;
+    box-shadow: none;
+    color: white;
+}
+
+.user-page button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    padding: 11px;
+    margin-top: 26px;
+    font-size: $m-size;
+}
+
+.user-page button:hover {
+    background-color: $buttonhover;
+}

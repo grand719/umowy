@@ -4,7 +4,7 @@ import ContractsListItem from './ContractListItem'
 import selectContracts from '../selectors/contracts'
 
 const ContractsList = (props) => (
-    <div>
+    <div className="contract-list">
         {props.contracts.lenght === 0 && <p>Brak kontraktów</p>}
         {props.contracts.map((contract)=> {
             return <ContractsListItem key={contract._id} {...contract} />

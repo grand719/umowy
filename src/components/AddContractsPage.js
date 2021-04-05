@@ -10,7 +10,7 @@ export class AddContractPage extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="add-contract-page">
             <h1>Dodaj umowe</h1>
             <ContractForm
                 onSubmit={this.onSubmit}

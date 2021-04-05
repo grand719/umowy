@@ -3,7 +3,7 @@ import ContractsList from './ContractsList'
 import ContractListFilter from './ContractsListFilter'
 
 const ContractsDashboardPage = () => (
-    <div>
+    <div className="contract-dashboard-page">
         <ContractListFilter />
         <ContractsList />
     </div>

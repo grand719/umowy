@@ -1,0 +1,153 @@
+.contract-page {
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contract-page--title {
+    background-color: $darkblue;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contract-page--wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.contract-page--menu {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $darkblue;
+    padding: 2px;
+    height: 150px;
+    max-width: 200px;
+}
+
+.contract-page--menu button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    padding: 11px;
+    font-size: $m-size;
+    width: 100%;
+}
+
+.contract-page--menu button:hover {
+    background-color: $buttonhover;
+}
+
+.delte-button {
+    margin-top: 30px;
+}
+
+.contract-page--invoice__list {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.contract-page--invoice-list-item {
+    display: flex;
+    background-color: $darkblue;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 11px;
+    width: 100%;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contract-page--invoice_button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.contract-page--invoice_button-wrapper button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    padding: 11px;
+    font-size: $m-size;
+    margin: 0 10px;
+}
+
+.contract-page--invoice_button-wrapper button:hover {
+    background-color: $buttonhover;
+}
+
+
+.add-invoice-page {
+    background-color: $darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.edit-invoice-page {
+    background-color: $darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.invoice-form {
+    background-color: $darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    color: white;
+}
+
+.invoice-form form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.invoice-form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid $gray;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 0px;
+    box-shadow: none;
+    color: white;
+}
+
+.invoice-form button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    padding: 11px;
+    margin-top: 26px;
+    font-size: $m-size;
+}
+
+.invoice-form button:hover {
+    background-color: $buttonhover;
+}

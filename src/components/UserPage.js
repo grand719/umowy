@@ -40,7 +40,7 @@ onSubmit = (e) => {
 
  render() {
     return (
-        <div>
+        <div className="user-page">
             <h1>
                 {this.props.user.name}
             </h1>

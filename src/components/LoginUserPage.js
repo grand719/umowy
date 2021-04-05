@@ -29,7 +29,8 @@ class LoginUserPage extends React.Component {
 
     render() {
         return (
-            <div>
+           <div className="login-wrapper"> 
+            <div className="login-bracket">
                 <h1>
                     Umowy
                 </h1>
@@ -38,6 +39,7 @@ class LoginUserPage extends React.Component {
                     <input type="password" placeholder="Hasło" value={this.state.password} onChange={this.onPasswordChange} />
                     <button>Zaloguj</button>
                 </form>
+            </div>
             </div>
         )
     }

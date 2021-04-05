@@ -1,0 +1,62 @@
+.add-contract-page {
+    background-color: $darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.edit-contract-page {
+    background-color: $darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contract-form {
+    background-color: $darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    color: white;
+}
+
+.contract-form form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contract-form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid $gray;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 0px;
+    box-shadow: none;
+    color: white;
+}
+
+.contract-form button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    padding: 11px;
+    margin-top: 26px;
+    font-size: $m-size;
+}
+
+.contract-form button:hover {
+    background-color: $buttonhover;
+}

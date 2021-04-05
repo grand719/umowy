@@ -1,0 +1,89 @@
+.contract-dashboard-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // overflow: scroll;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contract-filters {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: $darkblue;
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.filtruj {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+.contract-filters form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+.contract-filters button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    font-size: $m-size;
+}
+
+.contract-filters input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid $gray;
+    margin: 0 20px;
+    padding: 15px;
+    border-radius: 0px;
+    box-shadow: none;
+    color: white;
+}
+
+.contract-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contracts-list-item {
+    width: 80%;
+    height: 100px;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: $darkblue;
+    color: white;
+}
+
+.contract-item__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    text-decoration: none;
+
+}
+
+.contract-item__title {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contract-item__values {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}

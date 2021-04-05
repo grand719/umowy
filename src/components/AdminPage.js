@@ -5,7 +5,6 @@ import UsersList from './UsersList'
 
 const AdminPage = () => (
     <div>
-        <Link to='/adduser'>Dodaj użytkownika</Link>
         <UsersList />
     </div>
 )

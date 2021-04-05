@@ -1,0 +1,6 @@
+{
+"name":"admin","password":"$2a$08$AsSCMyotmytYYuKwM7.yve9uOJ5hVOMNhuRJTw4x5bff2z.bVG7.O",
+"tokens":[],
+"createdAt":{"$date":"2021-02-06T15:56:22.156Z"},
+"updatedAt":{"$date":"2021-04-05T14:00:01.020Z"},"__v":222
+}

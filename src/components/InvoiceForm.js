@@ -50,7 +50,7 @@ class InvoiceForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="invoice-form">
                 <form onSubmit={this.onSubmit}>
                     <input 
                         type="text"

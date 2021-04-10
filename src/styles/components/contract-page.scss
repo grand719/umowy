@@ -1,6 +1,6 @@
 .contract-page {
     display: flex;
-    max-width: 800px;
+    max-width: 1000px;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
@@ -11,12 +11,12 @@
     color: white;
     padding: 15px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contract-page--wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 800px;
     justify-content: flex-start;
     margin: 0 auto;
@@ -24,70 +24,44 @@
 
 .contract-page--menu {
     display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     background-color: $darkblue;
+    margin: 0 auto;
     padding: 2px;
-    height: 150px;
-    max-width: 200px;
+    height: 50px;
+    width: 100%;
 }
 
-.contract-page--menu button {
+.contract-page--menu-button {
+    box-sizing: border-box;
     color: white;
     background-color: $buttoncolor;
     border: none;
     padding: 11px;
+    height: 100%;
     font-size: $m-size;
     width: 100%;
 }
 
-.contract-page--menu button:hover {
+.contract-page--menu a {
+    width: 20%;
+    height: 100%;
+}
+
+.contract-page--menu-button:hover {
     background-color: $buttonhover;
 }
 
 .delte-button {
-    margin-top: 30px;
-}
-
-.contract-page--invoice__list {
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    max-width: 600px;
-}
-
-.contract-page--invoice-list-item {
-    display: flex;
-    background-color: $darkblue;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: 11px;
-    width: 100%;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.contract-page--invoice_button-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 5px;
-}
-
-.contract-page--invoice_button-wrapper button {
+    box-sizing: border-box;
     color: white;
     background-color: $buttoncolor;
     border: none;
     padding: 11px;
     font-size: $m-size;
-    margin: 0 10px;
+    width: 20%;
 }
-
-.contract-page--invoice_button-wrapper button:hover {
-    background-color: $buttonhover;
-}
-
 
 .add-invoice-page {
     background-color: $darkblue;
@@ -149,5 +123,61 @@
 }
 
 .invoice-form button:hover {
+    background-color: $buttonhover;
+}
+
+.table-wrapper {
+    height: 52vh;
+    width: 1000px;
+    margin: 10px auto 0;
+    overflow-y: scroll;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: $buttoncolor;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: $buttonhover;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    background-color: $darkblue;
+}
+
+table {
+    color: white;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.table-titles {
+    background-color: $darkblue;
+}
+
+.table-titles th {
+    padding: 10px;
+}
+
+table td {
+    padding: 5px;
+}
+
+table .first-td {
+    word-break: break-all;
+}
+
+table button {
+    color: white;
+    background-color: $buttoncolor;
+    border: none;
+    padding: 11px;
+    font-size: $m-size;
+    margin: 0 10px;
+}
+
+table button:hover {
     background-color: $buttonhover;
 }

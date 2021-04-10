@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
+import {SingleDatePicker} from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css'
 
 class InvoiceForm extends React.Component {
     constructor(props) {
@@ -9,6 +12,7 @@ class InvoiceForm extends React.Component {
             error: '',
             title: props.invoice ? props.invoice.title : '',
             value: props.invoice ? (props.invoice.value/100).toString() : '',
+            invoiceDate: props.invoice ? moment(props.invoice.invoiceDate).format('YYYY-MM-DD') : moment(),
             createdBy: props.invoice ? props.invoice.createdBy : this.props.user,
             modifiedBy: this.props.user,
         } 
@@ -28,6 +32,14 @@ class InvoiceForm extends React.Component {
         }
     }
 
+    onDateChange = (e) => {
+           const invoiceDate = e.target.value;
+
+            this.setState(()=> ({
+                invoiceDate
+            }))
+    }
+
     onSubmit = (e)=> {
         e.preventDefault();
 
@@ -40,12 +52,11 @@ class InvoiceForm extends React.Component {
             this.props.onSubmit({
                title: this.state.title,
                value: parseFloat(this.state.value, 10)*100,
+               invoiceDate: this.state.invoiceDate.valueOf(),
                createdBy: this.state.createdBy,
                modifiedBy: this.state.modifiedBy
             })
         }
-
-
     }
 
     render() {
@@ -64,6 +75,11 @@ class InvoiceForm extends React.Component {
                         placeholder="Kwota"
                         value={this.state.value}
                         onChange={this.onValueChange}
+                    />
+                    <input 
+                        type="date"
+                        value={this.state.invoiceDate}
+                        onChange={this.onDateChange}
                     />
                     <button>
                         {this.props.buttonText}

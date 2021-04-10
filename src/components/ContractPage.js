@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { startDeleteContract } from '../actions/contracts';
 import InvoiceListItem from './InvoiceListItem'
+import InvoiceTableItem from './InvoiceTableItem'
 
 const ContractPage = (props) => {
     const totalInvoiceValue = (invoices) => {
@@ -29,12 +30,12 @@ const ContractPage = (props) => {
             <div className="contract-page--wrapper">
             <div className="contract-page--menu">
             <Link to={`/createinvoice/${props.contract._id}`}>
-                <button>
+                <button className="contract-page--menu-button">
                     Dodaj Fakture
                 </button>
             </Link>
             <Link to={`/editcontract/${props.contract._id}`}>
-                <button>
+                <button className="contract-page--menu-button">
                     Edytuj
                 </button>
             </Link>
@@ -42,11 +43,26 @@ const ContractPage = (props) => {
                 Usuń
             </button>
             </div>
-            <div className="contract-page--invoice__list">
-            {props.contract.invoices.map((invoice)=> {
-                return <InvoiceListItem key={invoice._id}  invoice = {invoice} contractID = {props.contract._id}/>
-            })}
             </div>
+            <div className="table-wrapper">
+            <table>
+            <tbody>
+            <tr className="table-titles">
+                <th>Tytuł/Numer</th>
+                <th>Wartość faktury</th>
+                <th>Data</th>
+                <th>Dodane przez</th>
+                <th>Zmodyfikowane przez</th>
+                <th colSpan="2">Akcje</th>
+                <th></th>
+            </tr>
+            {
+                props.contract.invoices.map((invoice)=> {
+                    return <InvoiceTableItem key = {invoice._id} invoice = {invoice} contractID = {props.contract._id} />
+                })
+            }
+            </tbody>
+            </table>
             </div>
         </div>
     )

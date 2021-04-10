@@ -43,6 +43,10 @@ const contractSchema = new mongoose.Schema({
             trim: true,
             required: true,
         },
+        invoiceDate: {
+            type: Date,
+            required: true
+        },
         addAt: {
             type: Date,
             required: true,
@@ -65,10 +69,11 @@ contractSchema.methods.findInvoiceAndUpdate = async function(invoiceId, obj={}){
         throw new Error('There is no item with such id')
     }
 
-    const {title, value, modifiedBy} = obj;
+    const {title, value, modifiedBy, invoiceDate} = obj;
 
     contract.invoices[findInvoiceToUpdate].title = title ? title : contract.invoices[findInvoiceToUpdate].title
     contract.invoices[findInvoiceToUpdate].value = value ? value : contract.invoices[findInvoiceToUpdate].value
+    contract.invoices[findInvoiceToUpdate].invoiceDate = invoiceDate ? invoiceDate : contract.invoices[findInvoiceToUpdate].invoiceDate
     contract.invoices[findInvoiceToUpdate].modifiedBy = modifiedBy
 }
 

@@ -12,7 +12,7 @@ class InvoiceForm extends React.Component {
             error: '',
             title: props.invoice ? props.invoice.title : '',
             value: props.invoice ? (props.invoice.value/100).toString() : '',
-            invoiceDate: props.invoice ? moment(props.invoice.invoiceDate).format('YYYY-MM-DD') : moment(),
+            invoiceDate: props.invoice ? moment(props.invoice.invoiceDate).format('YYYY-MM-DD') : moment().format('YYYY-MM-DD'),
             createdBy: props.invoice ? props.invoice.createdBy : this.props.user,
             modifiedBy: this.props.user,
         } 

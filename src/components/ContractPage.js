@@ -17,8 +17,12 @@ const ContractPage = (props) => {
     }
 
     const onClickDelete = () => {
-        props.startDeleteContract(props.contract._id, props.contract.year)
-        props.history.push('/')
+
+        const acceptCheck = confirm('Napewno chcesz usunąć tą umowę?')
+        if(acceptCheck) {
+            props.startDeleteContract(props.contract._id, props.contract.year)
+            props.history.push('/')
+        }
     }
     return (
         <div className="contract-page">

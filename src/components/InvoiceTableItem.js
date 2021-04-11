@@ -5,7 +5,16 @@ import {startDeleteInvoice} from '../actions/contracts'
 import numeral from 'numeral'
 import moment from 'moment';
 
-const InvoiceTableItem = (props) => (
+const InvoiceTableItem = (props) => {
+
+    const onClickDelete = () => {
+        const acceptCheck = confirm('Napewno chcesz usunąć tą umowę?')
+        if(acceptCheck) {
+            props.startDeleteInvoice(props.contractID,props.invoice._id)
+        } 
+    }
+
+    return(
   <tr>
       <td className="first-td">
           {props.invoice.title}
@@ -30,12 +39,12 @@ const InvoiceTableItem = (props) => (
       </Link>
       </td>
       <td>
-      <button onClick={()=>{props.startDeleteInvoice(props.contractID,props.invoice._id)}}>
+      <button onClick={onClickDelete}>
                 Usuń
       </button>
       </td>
   </tr>
-)
+)}
 
 const mapDispatchToProps = (dispatch) => {
     return {

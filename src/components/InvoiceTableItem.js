@@ -8,7 +8,7 @@ import moment from 'moment';
 const InvoiceTableItem = (props) => {
 
     const onClickDelete = () => {
-        const acceptCheck = confirm('Napewno chcesz usunąć tą umowę?')
+        const acceptCheck = confirm('Napewno chcesz usunąć tą fakturę?')
         if(acceptCheck) {
             props.startDeleteInvoice(props.contractID,props.invoice._id)
         } 
@@ -17,7 +17,8 @@ const InvoiceTableItem = (props) => {
     return(
   <tr>
       <td className="first-td">
-          {props.invoice.title}
+          <p>{props.invoice.title}</p>
+          {props.invoice.dotyczy && <p>Dotyczy: {props.invoice.dotyczy}</p>}
       </td>
       <td>
           {numeral(props.invoice.value/100).format('0,0.00')}zł
@@ -44,6 +45,7 @@ const InvoiceTableItem = (props) => {
       </button>
       </td>
   </tr>
+
 )}
 
 const mapDispatchToProps = (dispatch) => {

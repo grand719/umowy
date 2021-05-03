@@ -29,6 +29,10 @@ const contractSchema = new mongoose.Schema({
             trim: true,
             required: true
         },
+        dotyczy: {
+            type: String,
+            default: '',
+        },
         value: {
             type: Float,
             default: 0,
@@ -69,10 +73,11 @@ contractSchema.methods.findInvoiceAndUpdate = async function(invoiceId, obj={}){
         throw new Error('There is no item with such id')
     }
 
-    const {title, value, modifiedBy, invoiceDate} = obj;
+    const {title, dotyczy, value, modifiedBy, invoiceDate} = obj;
 
     contract.invoices[findInvoiceToUpdate].title = title ? title : contract.invoices[findInvoiceToUpdate].title
     contract.invoices[findInvoiceToUpdate].value = value ? value : contract.invoices[findInvoiceToUpdate].value
+    contract.invoices[findInvoiceToUpdate].dotyczy = dotyczy ? dotyczy : contract.invoices[findInvoiceToUpdate].dotyczy
     contract.invoices[findInvoiceToUpdate].invoiceDate = invoiceDate ? invoiceDate : contract.invoices[findInvoiceToUpdate].invoiceDate
     contract.invoices[findInvoiceToUpdate].modifiedBy = modifiedBy
 }

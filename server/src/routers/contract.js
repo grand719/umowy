@@ -1,9 +1,12 @@
 const express = require('express')
 const auth = require('../middleware/auth')
+const jwt = require('jsonwebtoken')
+const User = require('../models/user')
 const Contract= require('../models/contract')
+const GenerateExcel = require('../excel-generate/excel-generate')
 const router = new express.Router()
 
-router.post('/contract-api/create', auth, async (req, res) => {
+router.post('/contract-api/create', auth,async (req, res) => {
     const contract = new Contract(req.body)
 
     try {
@@ -100,7 +103,26 @@ router.patch('/contract-api/:id', auth, async (req, res)=> {
     }catch(e) {
         res.status(400)
     }
-})
+}) 
+
+// router.get('/get-excel/:token', async (req, res) => {
+
+//     const token = req.params.token;
+
+//     try {
+//         const decoded = jwt.verify(token, process.env.JWT_SECRET)
+//         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token })
+//         if(user) {
+//             const contracts = await Contract.find({})
+//             const generateCells = new GenerateExcel(contracts, res)
+//         }
+
+
+//         res.status(200)
+//     }catch(e) {
+//         res.status(400).send(e)
+//     }
+// })
 
 router.get('/contract-api/findContracts/:year', auth,async (req, res) => {
     const year = req.params.year;

@@ -11,6 +11,7 @@ class InvoiceForm extends React.Component {
         this.state = {
             error: '',
             title: props.invoice ? props.invoice.title : '',
+            dotyczy: props.invoice ? props.invoice.dotyczy : '',
             value: props.invoice ? (props.invoice.value/100).toString() : '',
             invoiceDate: props.invoice ? moment(props.invoice.invoiceDate).format('YYYY-MM-DD') : moment().format('YYYY-MM-DD'),
             createdBy: props.invoice ? props.invoice.createdBy : this.props.user,
@@ -40,6 +41,14 @@ class InvoiceForm extends React.Component {
             }))
     }
 
+    onDotyczyChange = (e) => {
+        const dotyczy = e.target.value;
+
+        this.setState(()=>({
+            dotyczy
+        }))
+    }
+
     onSubmit = (e)=> {
         e.preventDefault();
 
@@ -51,6 +60,7 @@ class InvoiceForm extends React.Component {
             this.setState(()=>({error: ''}))
             this.props.onSubmit({
                title: this.state.title,
+               dotyczy: this.state.dotyczy,
                value: parseFloat(this.state.value, 10)*100,
                invoiceDate: this.state.invoiceDate.valueOf(),
                createdBy: this.state.createdBy,
@@ -75,6 +85,13 @@ class InvoiceForm extends React.Component {
                         placeholder="Kwota"
                         value={this.state.value}
                         onChange={this.onValueChange}
+                    />
+                    <input 
+                        type="text"
+                        placeholder="Dotyczy"
+                        autoFocus
+                        value={this.state.dotyczy}
+                        onChange={this.onDotyczyChange}
                     />
                     <input 
                         type="date"

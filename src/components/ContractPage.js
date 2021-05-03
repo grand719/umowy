@@ -61,8 +61,9 @@ const ContractPage = (props) => {
                 <th></th>
             </tr>
             {
-                props.contract.invoices.map((invoice)=> {
-                    return <InvoiceTableItem key = {invoice._id} invoice = {invoice} contractID = {props.contract._id} />
+                props.contract.invoices.map((invoice, idx)=> {
+                    return <InvoiceTableItem key = {idx} invoice = {invoice} 
+                    contractID = {props.contract._id} />
                 })
             }
             </tbody>
